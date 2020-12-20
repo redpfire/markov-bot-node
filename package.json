@@ -1,0 +1,26 @@
+{
+  "name": "themask",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^7.1.1",
+    "bufferutil": "^4.0.2",
+    "discord.js": "^12.5.1",
+    "erlpack": "discord/erlpack",
+    "markov-strings": "^3.0.1",
+    "random-weighted-choice": "^0.1.4",
+    "sqlite": "^4.0.18",
+    "sqlite3": "^5.0.0",
+    "upath": "^2.0.1",
+    "url-regex": "^5.0.0",
+    "utf-8-validate": "^5.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
