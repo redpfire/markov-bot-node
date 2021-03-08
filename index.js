@@ -37,12 +37,6 @@ const db = new Database(upath.joinSafe(__dirname, 'volume/cache.db'));
 
 client.on('ready', async () => {
     console.log(`Logged in as ${client.user.tag}`);
-    const data = db.prepare('SELECT content FROM msgs WHERE content IS NOT NULL').pluck().all();
-
-    if (data.length)
-        markov.addData(data);
-
-    console.log(`Loaded ${data.length} lines.`);
 });
 
 client.on('message', async msg => {
@@ -228,5 +222,15 @@ client.on('message', async msg => {
         }
     }
 });
+
+// load data
+const data = db.prepare('SELECT content FROM msgs WHERE content IS NOT NULL').pluck().all();
+
+console.log(`Preparing ${data.length} lines.`);
+
+if (data.length)
+    markov.addData(data);
+
+console.log(`Loaded ${data.length} lines.`);
 
 client.login(config.token);
